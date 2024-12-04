@@ -130,6 +130,7 @@
     <ClCompile Include="P33-T37-Queue.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyPriorityQueue.h" />
     <ClInclude Include="MyQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
