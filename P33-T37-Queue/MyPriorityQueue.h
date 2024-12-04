@@ -31,7 +31,13 @@ namespace myQueue {
 					Queue<U>::current = el;
 				}
 				else { //В середину черги
+					Node<U>* pPrev = p->prev;
 
+					pPrev->next = el;
+					el->prev = pPrev;
+
+					p->prev = el;
+					el->next = p;
 				}
 			}
 		}
