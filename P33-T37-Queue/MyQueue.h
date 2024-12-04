@@ -27,7 +27,11 @@ namespace myQueue {
 		Queue() {
 			head = current = nullptr;
 		}
-		~Queue() {   }//реалізація
+		~Queue() { 
+			while (!isEmpty()) {
+				pop_front();
+			}
+		}//реалізація
 
 		bool isEmpty()const { 
 			return head == nullptr;
