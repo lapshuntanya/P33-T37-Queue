@@ -30,11 +30,26 @@ namespace myQueue {
 		~Queue() {   }//реалізація
 
 		bool isEmpty()const { 
-
+			return head == nullptr;
 		}//реалізація
-		U first()const { ... }//реалізація
 
-		void push_back(U value) { ... }//реалізація
+		U first()const { 
+			if (isEmpty()) throw "MyQueue is empty!";
+
+			return head->info;
+		}//реалізація
+
+		void push_back(U value) { 
+			Node<U>* el = new Node<U>(value); //info=value, next = prev = nullptr
+
+			if (isEmpty()) head = current = el;
+			else {
+				current->next = el;
+				el->prev = current;
+				current = el;
+			}
+		}//реалізація
+
 		void pop_front() { ... }//реалізація
 
 		void show()const { ... }//реалізація
